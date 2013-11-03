@@ -1,13 +1,13 @@
 //
-//  ViewController.h
+//  HomeViewController.h
 //  ZooAcamica
 //
-//  Created by Nicolás Porpiglia on 25/10/13.
+//  Created by Matias Paillet on 11/3/13.
 //  Copyright (c) 2013 Nicolás Porpiglia. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface HomeViewController : UIViewController
 
 @end
