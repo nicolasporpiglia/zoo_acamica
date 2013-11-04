@@ -7,6 +7,7 @@
 //
 
 #import "HomeViewController.h"
+#import "ComidasViewController.h"
 
 @interface HomeViewController () {
     IBOutlet UILabel* nombre;
@@ -33,10 +34,25 @@
     [nombre setText:@"Panchito"];
 }
 
+- (void) viewWillAppear:(BOOL)animated {
+    UIBarButtonItem *comidasButton = [[UIBarButtonItem alloc] initWithTitle:@"Comidas" style:UIBarButtonItemStylePlain target:self action:@selector(openComidas)];
+    NSArray *actionButtonItems = @[comidasButton];
+    self.navigationItem.rightBarButtonItems = actionButtonItems;
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (NSString*) title {
+    return @"Mi Mascota";
+}
+
+- (void) openComidas {
+    ComidasViewController* comidasController = [[ComidasViewController alloc] initWithNibName:@"ComidasViewController" bundle:nil];
+    [self.navigationController pushViewController:comidasController animated:YES];
 }
 
 @end
