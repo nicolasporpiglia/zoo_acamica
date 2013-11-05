@@ -13,12 +13,14 @@
 		6D2B1CF4181B4D890064C6D5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D2B1CF2181B4D890064C6D5 /* InfoPlist.strings */; };
 		6D2B1CF6181B4D890064C6D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D2B1CF5181B4D890064C6D5 /* main.m */; };
 		6D2B1CFA181B4D890064C6D5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D2B1CF9181B4D890064C6D5 /* AppDelegate.m */; };
-		6D2B1D02181B4D890064C6D5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D2B1D01181B4D890064C6D5 /* Images.xcassets */; };
 		6D2B1D09181B4D890064C6D5 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2B1D08181B4D890064C6D5 /* XCTest.framework */; };
 		6D2B1D0A181B4D890064C6D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2B1CE9181B4D890064C6D5 /* Foundation.framework */; };
 		6D2B1D0B181B4D890064C6D5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2B1CED181B4D890064C6D5 /* UIKit.framework */; };
 		6D2B1D13181B4D890064C6D5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D2B1D11181B4D890064C6D5 /* InfoPlist.strings */; };
 		6D2B1D15181B4D890064C6D5 /* ZooAcamicaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D2B1D14181B4D890064C6D5 /* ZooAcamicaTests.m */; };
+		6DEA5E501828645800463A27 /* ComidaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEA5E4F1828645800463A27 /* ComidaCell.m */; };
+		6DEA5E52182864C600463A27 /* ComidaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DEA5E51182864C600463A27 /* ComidaCell.xib */; };
+		6DEA5E5418286BFC00463A27 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DEA5E5318286BFC00463A27 /* Images.xcassets */; };
 		D60AF4381826BCB300B24052 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D60AF4361826BCB300B24052 /* HomeViewController.m */; };
 		D60AF4391826BCB300B24052 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D60AF4371826BCB300B24052 /* HomeViewController.xib */; };
 		D651407D1827E7E000FDF6AC /* ComidasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D651407B1827E7E000FDF6AC /* ComidasViewController.m */; };
@@ -46,12 +48,15 @@
 		6D2B1CF7181B4D890064C6D5 /* ZooAcamica-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZooAcamica-Prefix.pch"; sourceTree = "<group>"; };
 		6D2B1CF8181B4D890064C6D5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6D2B1CF9181B4D890064C6D5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6D2B1D01181B4D890064C6D5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6D2B1D07181B4D890064C6D5 /* ZooAcamicaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZooAcamicaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D2B1D08181B4D890064C6D5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6D2B1D10181B4D890064C6D5 /* ZooAcamicaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ZooAcamicaTests-Info.plist"; sourceTree = "<group>"; };
 		6D2B1D12181B4D890064C6D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6D2B1D14181B4D890064C6D5 /* ZooAcamicaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZooAcamicaTests.m; sourceTree = "<group>"; };
+		6DEA5E4E1828645800463A27 /* ComidaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComidaCell.h; sourceTree = "<group>"; };
+		6DEA5E4F1828645800463A27 /* ComidaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComidaCell.m; sourceTree = "<group>"; };
+		6DEA5E51182864C600463A27 /* ComidaCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComidaCell.xib; sourceTree = "<group>"; };
+		6DEA5E5318286BFC00463A27 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D60AF4351826BCB300B24052 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		D60AF4361826BCB300B24052 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		D60AF4371826BCB300B24052 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
@@ -117,9 +122,9 @@
 		6D2B1CEF181B4D890064C6D5 /* ZooAcamica */ = {
 			isa = PBXGroup;
 			children = (
+				6DEA5E5318286BFC00463A27 /* Images.xcassets */,
 				6D2B1CF8181B4D890064C6D5 /* AppDelegate.h */,
 				6D2B1CF9181B4D890064C6D5 /* AppDelegate.m */,
-				6D2B1D01181B4D890064C6D5 /* Images.xcassets */,
 				6D2B1CF0181B4D890064C6D5 /* Supporting Files */,
 				D60AF4351826BCB300B24052 /* HomeViewController.h */,
 				D60AF4361826BCB300B24052 /* HomeViewController.m */,
@@ -127,6 +132,9 @@
 				D651407A1827E7E000FDF6AC /* ComidasViewController.h */,
 				D651407B1827E7E000FDF6AC /* ComidasViewController.m */,
 				D651407C1827E7E000FDF6AC /* ComidasViewController.xib */,
+				6DEA5E4E1828645800463A27 /* ComidaCell.h */,
+				6DEA5E4F1828645800463A27 /* ComidaCell.m */,
+				6DEA5E51182864C600463A27 /* ComidaCell.xib */,
 			);
 			path = ZooAcamica;
 			sourceTree = "<group>";
@@ -236,7 +244,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D2B1D02181B4D890064C6D5 /* Images.xcassets in Resources */,
+				6DEA5E52182864C600463A27 /* ComidaCell.xib in Resources */,
+				6DEA5E5418286BFC00463A27 /* Images.xcassets in Resources */,
 				D651407E1827E7E000FDF6AC /* ComidasViewController.xib in Resources */,
 				6D2B1CF4181B4D890064C6D5 /* InfoPlist.strings in Resources */,
 				D60AF4391826BCB300B24052 /* HomeViewController.xib in Resources */,
@@ -258,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DEA5E501828645800463A27 /* ComidaCell.m in Sources */,
 				6D2B1CFA181B4D890064C6D5 /* AppDelegate.m in Sources */,
 				D651407D1827E7E000FDF6AC /* ComidasViewController.m in Sources */,
 				6D2B1CF6181B4D890064C6D5 /* main.m in Sources */,

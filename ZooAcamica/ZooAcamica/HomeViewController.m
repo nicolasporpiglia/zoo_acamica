@@ -9,11 +9,6 @@
 #import "HomeViewController.h"
 #import "ComidasViewController.h"
 
-@interface HomeViewController () {
-    IBOutlet UILabel* nombre;
-}
-
-@end
 
 @implementation HomeViewController
 
@@ -35,8 +30,11 @@
 }
 
 - (void) viewWillAppear:(BOOL)animated {
+    
     UIBarButtonItem *comidasButton = [[UIBarButtonItem alloc] initWithTitle:@"Comidas" style:UIBarButtonItemStylePlain target:self action:@selector(openComidas)];
+    
     NSArray *actionButtonItems = @[comidasButton];
+    
     self.navigationItem.rightBarButtonItems = actionButtonItems;
 }
 

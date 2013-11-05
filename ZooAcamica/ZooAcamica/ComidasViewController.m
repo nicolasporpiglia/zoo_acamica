@@ -26,8 +26,35 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+
+    [tableFoods registerNib:[UINib nibWithNibName:@"ComidaCell"
+                                               bundle:[NSBundle mainBundle]]
+                    forCellReuseIdentifier:@"ComidaCell"];
 }
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    ComidaCell *cell;
+    cell = [tableView dequeueReusableCellWithIdentifier:@"ComidaCell"];
+    
+    if (!cell) {
+        cell = [[ComidaCell alloc] init];
+        [cell setImage:[NSString stringWithFormat:@"Food_%d.jpg", indexPath.row]];
+    }
+    
+    return cell;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return 5;
+}
+
+-(void) tableView: (UITableView*) tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
+
+
 
 - (void)didReceiveMemoryWarning
 {

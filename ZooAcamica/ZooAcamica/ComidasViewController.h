@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ComidaCell.h"
 
-@interface ComidasViewController : UIViewController
+@interface ComidasViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>{
+    IBOutlet UITableView *tableFoods;
+}
 
 @end
