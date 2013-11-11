@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AudioToolbox/AudioToolbox.h>
+#import "ComidasViewController.h"
 
-@interface HomeViewController : UIViewController{
+@interface HomeViewController : UIViewController<ComidasSelected>{
     
     IBOutlet UILabel* nombre;
+    IBOutlet UIImageView* imgMascota;
+    
+    UIImageView* imagenComida;
    
 }
 @end

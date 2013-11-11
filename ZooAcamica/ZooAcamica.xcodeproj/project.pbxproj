@@ -25,6 +25,7 @@
 		D60AF4391826BCB300B24052 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D60AF4371826BCB300B24052 /* HomeViewController.xib */; };
 		D651407D1827E7E000FDF6AC /* ComidasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D651407B1827E7E000FDF6AC /* ComidasViewController.m */; };
 		D651407E1827E7E000FDF6AC /* ComidasViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D651407C1827E7E000FDF6AC /* ComidasViewController.xib */; };
+		D6AD23711831994F0019ED8C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6AD23701831994F0019ED8C /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		D651407A1827E7E000FDF6AC /* ComidasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComidasViewController.h; sourceTree = "<group>"; };
 		D651407B1827E7E000FDF6AC /* ComidasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComidasViewController.m; sourceTree = "<group>"; };
 		D651407C1827E7E000FDF6AC /* ComidasViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComidasViewController.xib; sourceTree = "<group>"; };
+		D6AD23701831994F0019ED8C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6AD23711831994F0019ED8C /* AudioToolbox.framework in Frameworks */,
 				6D2B1CEC181B4D890064C6D5 /* CoreGraphics.framework in Frameworks */,
 				6D2B1CEE181B4D890064C6D5 /* UIKit.framework in Frameworks */,
 				6D2B1CEA181B4D890064C6D5 /* Foundation.framework in Frameworks */,
@@ -111,6 +114,7 @@
 		6D2B1CE8181B4D890064C6D5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D6AD23701831994F0019ED8C /* AudioToolbox.framework */,
 				6D2B1CE9181B4D890064C6D5 /* Foundation.framework */,
 				6D2B1CEB181B4D890064C6D5 /* CoreGraphics.framework */,
 				6D2B1CED181B4D890064C6D5 /* UIKit.framework */,

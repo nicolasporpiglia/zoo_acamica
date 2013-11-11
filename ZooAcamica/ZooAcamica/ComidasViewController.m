@@ -27,8 +27,7 @@
 {
     [super viewDidLoad];
 
-    [tableFoods registerNib:[UINib nibWithNibName:@"ComidaCell"
-                                               bundle:[NSBundle mainBundle]]
+    [tableFoods registerNib:[UINib nibWithNibName:@"ComidaCell" bundle:[NSBundle mainBundle]]
                     forCellReuseIdentifier:@"ComidaCell"];
 }
 
@@ -51,10 +50,10 @@
 }
 
 -(void) tableView: (UITableView*) tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    if([self.delegate respondsToSelector:@selector(didSelectedComida:)]) {
+        [self.delegate didSelectedComida:[NSString stringWithFormat:@"Food_%d.jpg", indexPath.row]];
+    }
 }
-
-
 
 - (void)didReceiveMemoryWarning
 {

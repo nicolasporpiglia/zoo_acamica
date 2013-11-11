@@ -9,8 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "ComidaCell.h"
 
+@protocol ComidasSelected <NSObject>
+
+- (void) didSelectedComida:(NSString*) comidaImage;
+
+@end
+
 @interface ComidasViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>{
     IBOutlet UITableView *tableFoods;
 }
+
+@property (nonatomic,retain) id<ComidasSelected> delegate;
 
 @end
