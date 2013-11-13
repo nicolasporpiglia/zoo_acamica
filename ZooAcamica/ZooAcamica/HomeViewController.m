@@ -67,14 +67,24 @@
                          if([self tapEnMascota:tappedPoint]) {
                              [imagenComida removeFromSuperview];
                              AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
+                             
+                             NSArray * imagenesMascotaComiendo  = [[NSArray alloc] initWithObjects:
+                                                      [UIImage imageNamed:@"comiendo_1.png"],
+                                                      [UIImage imageNamed:@"comiendo_2.png"],
+                                                      [UIImage imageNamed:@"comiendo_3.png"],
+                                                      nil];
+                             [imgMascota setAnimationImages:imagenesMascotaComiendo];
+                             [imgMascota setAnimationDuration:1.0f];
+                             [imgMascota setAnimationRepeatCount:3.0f];
+                             [imgMascota startAnimating];
                          }
                      }];
 }
 
 - (BOOL) tapEnMascota:(CGPoint) point {
     
-    BOOL xIsInside = point.x > imagenComida.frame.origin.x && point.x < (imagenComida.frame.origin.x + imagenComida.frame.size.width);
-    BOOL yIsInside = point.y > imagenComida.frame.origin.y && point.y < (imagenComida.frame.origin.y + imagenComida.frame.size.height);
+    BOOL xIsInside = point.x > imgMascota.frame.origin.x && point.x < (imgMascota.frame.origin.x + imgMascota.frame.size.width);
+    BOOL yIsInside = point.y > imgMascota.frame.origin.y && point.y < (imgMascota.frame.origin.y + imgMascota.frame.size.height);
     
     return xIsInside && yIsInside;
 }
