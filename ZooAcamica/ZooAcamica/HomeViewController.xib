@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController">
             <connections>
+                <outlet property="btnEjercitar" destination="puE-Eg-tfP" id="ezV-Gm-nn4"/>
                 <outlet property="imgMascota" destination="1Ks-rc-yGa" id="S1G-51-GP4"/>
                 <outlet property="nombre" destination="mi0-iz-kF9" id="ftm-ZE-VgG"/>
                 <outlet property="view" destination="1" id="3"/>
@@ -27,6 +28,16 @@
                     <rect key="frame" x="40" y="127" width="240" height="271"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="puE-Eg-tfP">
+                    <rect key="frame" x="107" y="349" width="107" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Ejercitar">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="hacerEjercicio:" destination="-1" eventType="touchUpInside" id="0dp-Jh-L06"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.12941176470588234" green="0.68627450980392157" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <gestureRecognizers/>

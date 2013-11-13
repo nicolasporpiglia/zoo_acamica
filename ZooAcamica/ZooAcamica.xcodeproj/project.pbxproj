@@ -25,6 +25,8 @@
 		D60AF4391826BCB300B24052 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D60AF4371826BCB300B24052 /* HomeViewController.xib */; };
 		D651407D1827E7E000FDF6AC /* ComidasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D651407B1827E7E000FDF6AC /* ComidasViewController.m */; };
 		D651407E1827E7E000FDF6AC /* ComidasViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D651407C1827E7E000FDF6AC /* ComidasViewController.xib */; };
+		D6ACE64B1833241400E4C444 /* StatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6ACE6491833241400E4C444 /* StatusViewController.m */; };
+		D6ACE64C1833241400E4C444 /* StatusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6ACE64A1833241400E4C444 /* StatusViewController.xib */; };
 		D6AD23711831994F0019ED8C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6AD23701831994F0019ED8C /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +66,9 @@
 		D651407A1827E7E000FDF6AC /* ComidasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComidasViewController.h; sourceTree = "<group>"; };
 		D651407B1827E7E000FDF6AC /* ComidasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComidasViewController.m; sourceTree = "<group>"; };
 		D651407C1827E7E000FDF6AC /* ComidasViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComidasViewController.xib; sourceTree = "<group>"; };
+		D6ACE6481833241400E4C444 /* StatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusViewController.h; sourceTree = "<group>"; };
+		D6ACE6491833241400E4C444 /* StatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusViewController.m; sourceTree = "<group>"; };
+		D6ACE64A1833241400E4C444 /* StatusViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusViewController.xib; sourceTree = "<group>"; };
 		D6AD23701831994F0019ED8C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -139,6 +144,9 @@
 				6DEA5E4E1828645800463A27 /* ComidaCell.h */,
 				6DEA5E4F1828645800463A27 /* ComidaCell.m */,
 				6DEA5E51182864C600463A27 /* ComidaCell.xib */,
+				D6ACE6481833241400E4C444 /* StatusViewController.h */,
+				D6ACE6491833241400E4C444 /* StatusViewController.m */,
+				D6ACE64A1833241400E4C444 /* StatusViewController.xib */,
 			);
 			path = ZooAcamica;
 			sourceTree = "<group>";
@@ -248,6 +256,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6ACE64C1833241400E4C444 /* StatusViewController.xib in Resources */,
 				6DEA5E52182864C600463A27 /* ComidaCell.xib in Resources */,
 				6DEA5E5418286BFC00463A27 /* Images.xcassets in Resources */,
 				D651407E1827E7E000FDF6AC /* ComidasViewController.xib in Resources */,
@@ -275,6 +284,7 @@
 				6D2B1CFA181B4D890064C6D5 /* AppDelegate.m in Sources */,
 				D651407D1827E7E000FDF6AC /* ComidasViewController.m in Sources */,
 				6D2B1CF6181B4D890064C6D5 /* main.m in Sources */,
+				D6ACE64B1833241400E4C444 /* StatusViewController.m in Sources */,
 				D60AF4381826BCB300B24052 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,8 +14,11 @@
     
     IBOutlet UILabel* nombre;
     IBOutlet UIImageView* imgMascota;
+    IBOutlet UIButton* btnEjercitar;
     
     UIImageView* imagenComida;
-   
 }
+
+@property(nonatomic,assign) BOOL estaEjercitando;
+
 @end

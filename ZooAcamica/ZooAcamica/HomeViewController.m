@@ -102,4 +102,29 @@
     [self.view addSubview:imagenComida];
 }
 
+- (IBAction) hacerEjercicio:(id)sender {
+    
+    if(!self.estaEjercitando) {
+        NSArray * imagenesMascotaEjercitando  = [[NSArray alloc] initWithObjects:
+                                                 [UIImage imageNamed:@"ejercitando_1.png"],
+                                                 [UIImage imageNamed:@"ejercitando_2.png"],
+                                                 [UIImage imageNamed:@"ejercitando_3.png"],
+                                                 nil];
+        [imgMascota setAnimationImages:imagenesMascotaEjercitando];
+        [imgMascota setAnimationDuration:1.0f];
+        [imgMascota startAnimating];
+        
+        [btnEjercitar setTitle:@"Detener Ejercicio" forState:UIControlStateNormal];
+        
+        self.estaEjercitando = YES;
+    } else {
+        
+        [imgMascota stopAnimating];
+        
+        [btnEjercitar setTitle:@"Ejercitar" forState:UIControlStateNormal];
+        
+        self.estaEjercitando = NO;
+    }
+}
+
 @end

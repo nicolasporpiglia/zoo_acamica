@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "HomeViewController.h"
+#import "StatusViewController.h"
 
 @implementation AppDelegate
 
@@ -15,11 +16,17 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    
     HomeViewController* home = [[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:nil];
+    UINavigationController* navControllerHome = [[UINavigationController alloc] initWithRootViewController:home];
     
-    UINavigationController* navController = [[UINavigationController alloc] initWithRootViewController:home];
+    StatusViewController* status = [[StatusViewController alloc] initWithNibName:@"StatusViewController" bundle:nil];
+    UINavigationController* navControllerStatus = [[UINavigationController alloc] initWithRootViewController:status];
     
-    [self.window setRootViewController:navController];
+    [tabBarController setViewControllers:[NSArray arrayWithObjects:navControllerHome,navControllerStatus,nil]];
+    
+    [self.window setRootViewController:tabBarController];
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
