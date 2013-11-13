@@ -12,11 +12,12 @@
 
 @interface HomeViewController : UIViewController<ComidasSelected>{
     
-    IBOutlet UILabel* nombre;
     IBOutlet UIImageView* imgMascota;
     IBOutlet UIButton* btnEjercitar;
+    IBOutlet UIProgressView* progressEnergia;
     
     UIImageView* imagenComida;
+    NSTimer* timerEjercicio;
 }
 
 @property(nonatomic,assign) BOOL estaEjercitando;

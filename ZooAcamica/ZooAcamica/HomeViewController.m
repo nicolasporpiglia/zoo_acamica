@@ -7,25 +7,10 @@
 //
 
 #import "HomeViewController.h"
+#import "EstadoMascota.h"
 
 @implementation HomeViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    // Do any additional setup after loading the view from its nib.
-    [nombre setText:@"Panchito"];
-}
 
 - (void) viewWillAppear:(BOOL)animated {
     
@@ -34,16 +19,12 @@
     NSArray *actionButtonItems = @[comidasButton];
     
     self.navigationItem.rightBarButtonItems = actionButtonItems;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    [self actualizarEnergia];
 }
 
 - (NSString*) title {
-    return @"Mi Mascota";
+    return @"Panchito";
 }
 
 - (void) openComidas {
@@ -67,6 +48,9 @@
                          if([self tapEnMascota:tappedPoint]) {
                              [imagenComida removeFromSuperview];
                              AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
+                             
+                             [[EstadoMascota sharedInstance] ingirioComida];
+                             [self actualizarEnergia];
                              
                              NSArray * imagenesMascotaComiendo  = [[NSArray alloc] initWithObjects:
                                                       [UIImage imageNamed:@"comiendo_1.png"],
@@ -116,15 +100,29 @@
         
         [btnEjercitar setTitle:@"Detener Ejercicio" forState:UIControlStateNormal];
         
+        timerEjercicio = [NSTimer scheduledTimerWithTimeInterval:2.0f target:self selector:@selector(haciendoEjercicio) userInfo:nil repeats:YES];
+        
         self.estaEjercitando = YES;
     } else {
         
         [imgMascota stopAnimating];
         
+        [timerEjercicio invalidate];
+        timerEjercicio = nil;
+        
         [btnEjercitar setTitle:@"Ejercitar" forState:UIControlStateNormal];
         
         self.estaEjercitando = NO;
     }
+}
+
+- (void) haciendoEjercicio {
+    [[EstadoMascota sharedInstance] ejercitar];
+    [self actualizarEnergia];
+}
+
+- (void) actualizarEnergia {
+    [progressEnergia setProgress:[[EstadoMascota sharedInstance] energia] animated:YES];
 }
 
 @end

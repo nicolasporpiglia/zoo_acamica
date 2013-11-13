@@ -27,6 +27,7 @@
 		D651407E1827E7E000FDF6AC /* ComidasViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D651407C1827E7E000FDF6AC /* ComidasViewController.xib */; };
 		D6ACE64B1833241400E4C444 /* StatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6ACE6491833241400E4C444 /* StatusViewController.m */; };
 		D6ACE64C1833241400E4C444 /* StatusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6ACE64A1833241400E4C444 /* StatusViewController.xib */; };
+		D6ACE64F1833285700E4C444 /* EstadoMascota.m in Sources */ = {isa = PBXBuildFile; fileRef = D6ACE64E1833285700E4C444 /* EstadoMascota.m */; };
 		D6AD23711831994F0019ED8C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6AD23701831994F0019ED8C /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +70,8 @@
 		D6ACE6481833241400E4C444 /* StatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusViewController.h; sourceTree = "<group>"; };
 		D6ACE6491833241400E4C444 /* StatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusViewController.m; sourceTree = "<group>"; };
 		D6ACE64A1833241400E4C444 /* StatusViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusViewController.xib; sourceTree = "<group>"; };
+		D6ACE64D1833285700E4C444 /* EstadoMascota.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EstadoMascota.h; sourceTree = "<group>"; };
+		D6ACE64E1833285700E4C444 /* EstadoMascota.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EstadoMascota.m; sourceTree = "<group>"; };
 		D6AD23701831994F0019ED8C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -147,6 +150,8 @@
 				D6ACE6481833241400E4C444 /* StatusViewController.h */,
 				D6ACE6491833241400E4C444 /* StatusViewController.m */,
 				D6ACE64A1833241400E4C444 /* StatusViewController.xib */,
+				D6ACE64D1833285700E4C444 /* EstadoMascota.h */,
+				D6ACE64E1833285700E4C444 /* EstadoMascota.m */,
 			);
 			path = ZooAcamica;
 			sourceTree = "<group>";
@@ -286,6 +291,7 @@
 				6D2B1CF6181B4D890064C6D5 /* main.m in Sources */,
 				D6ACE64B1833241400E4C444 /* StatusViewController.m in Sources */,
 				D60AF4381826BCB300B24052 /* HomeViewController.m in Sources */,
+				D6ACE64F1833285700E4C444 /* EstadoMascota.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

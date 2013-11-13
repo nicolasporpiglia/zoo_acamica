@@ -9,6 +9,7 @@
                 <outlet property="btnEjercitar" destination="puE-Eg-tfP" id="ezV-Gm-nn4"/>
                 <outlet property="imgMascota" destination="1Ks-rc-yGa" id="S1G-51-GP4"/>
                 <outlet property="nombre" destination="mi0-iz-kF9" id="ftm-ZE-VgG"/>
+                <outlet property="progressEnergia" destination="Oad-iP-CKg" id="VOr-WJ-V1X"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
@@ -17,10 +18,10 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pepito" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mi0-iz-kF9">
-                    <rect key="frame" x="87" y="81" width="146" height="21"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Energía" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mi0-iz-kF9">
+                    <rect key="frame" x="87" y="83" width="146" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -38,6 +39,10 @@
                         <action selector="hacerEjercicio:" destination="-1" eventType="touchUpInside" id="0dp-Jh-L06"/>
                     </connections>
                 </button>
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" id="Oad-iP-CKg">
+                    <rect key="frame" x="85" y="112" width="150" height="2"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </progressView>
             </subviews>
             <color key="backgroundColor" red="0.12941176470588234" green="0.68627450980392157" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <gestureRecognizers/>

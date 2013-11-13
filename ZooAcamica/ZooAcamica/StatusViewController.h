@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface StatusViewController : UIViewController
+@interface StatusViewController : UIViewController {
+    IBOutlet UIProgressView* progressEnergia;
+}
 
 @end
