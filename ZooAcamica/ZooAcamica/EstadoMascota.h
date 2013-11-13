@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#define NOTIFICACION_MASCOTA_SIN_ENERGIA @"MASCOTA_SIN_ENERGIA"
+#define NOTIFICACION_MASCOTA_CON_ENERGIA @"MASCOTA_CON_ENERGIA"
 
 @interface EstadoMascota : NSObject
 
@@ -15,5 +17,7 @@
 - (void) ejercitar;
 
 @property(atomic,assign) int energia;
+@property(atomic,assign) int experiencia;
+@property(atomic,assign) int nivel;
 
 @end

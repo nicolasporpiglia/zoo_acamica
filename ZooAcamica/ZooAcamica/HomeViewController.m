@@ -11,7 +11,6 @@
 
 @implementation HomeViewController
 
-
 - (void) viewWillAppear:(BOOL)animated {
     
     UIBarButtonItem *comidasButton = [[UIBarButtonItem alloc] initWithTitle:@"Comidas" style:UIBarButtonItemStylePlain target:self action:@selector(openComidas)];
@@ -21,6 +20,16 @@
     self.navigationItem.rightBarButtonItems = actionButtonItems;
     
     [self actualizarEnergia];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mascotaExtenuada) name:NOTIFICACION_MASCOTA_SIN_ENERGIA object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mascotaTieneEnergiaOtraVez) name:NOTIFICACION_MASCOTA_CON_ENERGIA object:nil];
+}
+
+- (void) viewWillDisappear:(BOOL)animated {
+    [self pararEjercicio];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:NOTIFICACION_MASCOTA_CON_ENERGIA object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:NOTIFICACION_MASCOTA_SIN_ENERGIA object:nil];
 }
 
 - (NSString*) title {
@@ -89,31 +98,38 @@
 - (IBAction) hacerEjercicio:(id)sender {
     
     if(!self.estaEjercitando) {
-        NSArray * imagenesMascotaEjercitando  = [[NSArray alloc] initWithObjects:
-                                                 [UIImage imageNamed:@"ejercitando_1.png"],
-                                                 [UIImage imageNamed:@"ejercitando_2.png"],
-                                                 [UIImage imageNamed:@"ejercitando_3.png"],
-                                                 nil];
-        [imgMascota setAnimationImages:imagenesMascotaEjercitando];
-        [imgMascota setAnimationDuration:1.0f];
-        [imgMascota startAnimating];
-        
-        [btnEjercitar setTitle:@"Detener Ejercicio" forState:UIControlStateNormal];
-        
-        timerEjercicio = [NSTimer scheduledTimerWithTimeInterval:2.0f target:self selector:@selector(haciendoEjercicio) userInfo:nil repeats:YES];
-        
-        self.estaEjercitando = YES;
+        [self iniciarEjercicio];
     } else {
-        
-        [imgMascota stopAnimating];
-        
-        [timerEjercicio invalidate];
-        timerEjercicio = nil;
-        
-        [btnEjercitar setTitle:@"Ejercitar" forState:UIControlStateNormal];
-        
-        self.estaEjercitando = NO;
+        [self pararEjercicio];
     }
+}
+
+- (void) iniciarEjercicio {
+    NSArray * imagenesMascotaEjercitando  = [[NSArray alloc] initWithObjects:
+                                             [UIImage imageNamed:@"ejercitando_1.png"],
+                                             [UIImage imageNamed:@"ejercitando_2.png"],
+                                             [UIImage imageNamed:@"ejercitando_3.png"],
+                                             nil];
+    [imgMascota setAnimationImages:imagenesMascotaEjercitando];
+    [imgMascota setAnimationDuration:1.0f];
+    [imgMascota startAnimating];
+    
+    [btnEjercitar setTitle:@"Parar" forState:UIControlStateNormal];
+    
+    timerEjercicio = [NSTimer scheduledTimerWithTimeInterval:2.0f target:self selector:@selector(haciendoEjercicio) userInfo:nil repeats:YES];
+    
+    self.estaEjercitando = YES;
+}
+
+- (void) pararEjercicio {
+    [imgMascota stopAnimating];
+    
+    [timerEjercicio invalidate];
+    timerEjercicio = nil;
+    
+    [btnEjercitar setTitle:@"Ejercitar" forState:UIControlStateNormal];
+    
+    self.estaEjercitando = NO;
 }
 
 - (void) haciendoEjercicio {
@@ -122,7 +138,24 @@
 }
 
 - (void) actualizarEnergia {
-    [progressEnergia setProgress:[[EstadoMascota sharedInstance] energia] animated:YES];
+    [progressEnergia setProgress:[[EstadoMascota sharedInstance] energia]/100 animated:YES];
+}
+
+- (void) mascotaExtenuada {
+    
+    [[[UIAlertView alloc] initWithTitle:@"Tu mascota esta extenuada!" message:@"Dale de comer para que recupere energía" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+    
+    [self pararEjercicio];
+    
+    [imgMascota setImage:[UIImage imageNamed:@"mascota_extenuda.png"]];
+    
+    [btnEjercitar setEnabled:NO];
+}
+
+- (void) mascotaTieneEnergiaOtraVez {
+    [imgMascota setImage:[UIImage imageNamed:@"mascota_normal.png"]];
+    
+    [btnEjercitar setEnabled:YES];
 }
 
 @end

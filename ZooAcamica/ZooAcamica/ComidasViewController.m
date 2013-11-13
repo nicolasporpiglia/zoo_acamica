@@ -14,15 +14,6 @@
 
 @implementation ComidasViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -53,12 +44,6 @@
     if([self.delegate respondsToSelector:@selector(didSelectedComida:)]) {
         [self.delegate didSelectedComida:[NSString stringWithFormat:@"Food_%d.jpg", indexPath.row]];
     }
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

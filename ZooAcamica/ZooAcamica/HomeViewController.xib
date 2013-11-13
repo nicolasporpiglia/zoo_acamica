@@ -8,7 +8,6 @@
             <connections>
                 <outlet property="btnEjercitar" destination="puE-Eg-tfP" id="ezV-Gm-nn4"/>
                 <outlet property="imgMascota" destination="1Ks-rc-yGa" id="S1G-51-GP4"/>
-                <outlet property="nombre" destination="mi0-iz-kF9" id="ftm-ZE-VgG"/>
                 <outlet property="progressEnergia" destination="Oad-iP-CKg" id="VOr-WJ-V1X"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
@@ -30,7 +29,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="puE-Eg-tfP">
-                    <rect key="frame" x="107" y="349" width="107" height="30"/>
+                    <rect key="frame" x="78" y="349" width="165" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Ejercitar">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -39,7 +38,7 @@
                         <action selector="hacerEjercicio:" destination="-1" eventType="touchUpInside" id="0dp-Jh-L06"/>
                     </connections>
                 </button>
-                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" id="Oad-iP-CKg">
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.10000000000000003" id="Oad-iP-CKg">
                     <rect key="frame" x="85" y="112" width="150" height="2"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </progressView>

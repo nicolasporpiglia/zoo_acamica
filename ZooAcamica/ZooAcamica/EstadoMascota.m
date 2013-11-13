@@ -20,7 +20,24 @@ static EstadoMascota *instance;
     return instance;
 }
 
+- (id) init {
+    self = [super init];
+    
+    if(self) {
+        self.energia = 100;
+        self.experiencia = 0;
+        self.nivel = 0;
+    }
+    
+    return self;
+}
+
 - (void) ingirioComida {
+    
+    if(self.energia == 0) {
+       [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICACION_MASCOTA_CON_ENERGIA object:nil];
+    }
+    
     self.energia += 50;
     
     if(self.energia > 100) {
@@ -32,7 +49,24 @@ static EstadoMascota *instance;
     self.energia--;
     
     if (self.energia < 0) {
-      self.energia = 0;
+        self.energia = 0;
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICACION_MASCOTA_SIN_ENERGIA object:nil];
+    }
+    
+    [self aumentarExperiencia];
+}
+
+- (void) aumentarExperiencia {
+    self.experiencia+= 10;
+    
+    if((self.nivel < 5 && self.experiencia > 100)
+       || (self.experiencia > 250)) {
+        self.nivel ++;
+        self.experiencia = 0;
+        
+        NSString* mensaje = [NSString stringWithFormat:@"Tu mascota a subido es ahora nivel %d!",self.nivel];
+        
+        [[[UIAlertView alloc] initWithTitle:@"Felicitaciones!" message:mensaje delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
     }
 }
 
