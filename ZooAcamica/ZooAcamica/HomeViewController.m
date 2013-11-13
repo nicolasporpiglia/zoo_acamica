@@ -93,6 +93,8 @@
     [imagenComida setFrame:CGRectMake(screenWidth - 90, screenHeight - 90, 90, 90)];
     
     [self.view addSubview:imagenComida];
+    
+    [self.navigationController popToViewController:self animated:YES];
 }
 
 - (IBAction) hacerEjercicio:(id)sender {

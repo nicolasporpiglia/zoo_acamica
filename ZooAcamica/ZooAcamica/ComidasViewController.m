@@ -20,6 +20,7 @@
 
     [tableFoods registerNib:[UINib nibWithNibName:@"ComidaCell" bundle:[NSBundle mainBundle]]
                     forCellReuseIdentifier:@"ComidaCell"];
+    [tableFoods reloadData];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -29,20 +30,25 @@
     
     if (!cell) {
         cell = [[ComidaCell alloc] init];
-        [cell setImage:[NSString stringWithFormat:@"Food_%d.jpg", indexPath.row]];
     }
+    
+    [cell setImage:[NSString stringWithFormat:@"comida_%d.png", indexPath.row]];
     
     return cell;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 5;
+    return 8;
+}
+
+- (float) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 70.0f;
 }
 
 -(void) tableView: (UITableView*) tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if([self.delegate respondsToSelector:@selector(didSelectedComida:)]) {
-        [self.delegate didSelectedComida:[NSString stringWithFormat:@"Food_%d.jpg", indexPath.row]];
+        [self.delegate didSelectedComida:[NSString stringWithFormat:@"comida_%d.png", indexPath.row]];
     }
 }
 
