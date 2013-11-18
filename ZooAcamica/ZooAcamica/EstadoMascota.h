@@ -16,7 +16,7 @@
 - (void) ingirioComida;
 - (void) ejercitar;
 
-@property(atomic,assign) int energia;
+@property(atomic,assign) float energia;
 @property(atomic,assign) int experiencia;
 @property(atomic,assign) int nivel;
 

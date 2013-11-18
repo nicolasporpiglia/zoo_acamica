@@ -19,4 +19,9 @@
     return @"Estado";
 }
 
+- (void) viewDidLoad {
+    [progressEnergia setProgress:[[EstadoMascota sharedInstance] energia]/100 animated:YES];
+
+}
+
 @end

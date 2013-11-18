@@ -51,11 +51,13 @@
                      animations:^(void) {
                          [imagenComida setFrame:CGRectMake(xCoordinate - imagenComida.frame.size.width / 2,
                                                            yCoordinate - imagenComida.frame.size.height /2 ,
-                                                           90,
-                                                           90)];
+                                                           55,
+                                                           55)];
                      } completion:^(BOOL finished) {
-                         if([self tapEnMascota:tappedPoint]) {
+                         if([self tapEnMascota:tappedPoint] && imagenComida) {
+                             
                              [imagenComida removeFromSuperview];
+                             imagenComida = nil;
                              AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
                              
                              [[EstadoMascota sharedInstance] ingirioComida];
@@ -77,13 +79,19 @@
 
 - (BOOL) tapEnMascota:(CGPoint) point {
     
-    BOOL xIsInside = point.x > imgMascota.frame.origin.x && point.x < (imgMascota.frame.origin.x + imgMascota.frame.size.width);
-    BOOL yIsInside = point.y > imgMascota.frame.origin.y && point.y < (imgMascota.frame.origin.y + imgMascota.frame.size.height);
+    BOOL xIsInside = point.x > viewZonaComer.frame.origin.x && point.x < (viewZonaComer.frame.origin.x + viewZonaComer.frame.size.width);
+    BOOL yIsInside = point.y > viewZonaComer.frame.origin.y && point.y < (viewZonaComer.frame.origin.y + viewZonaComer.frame.size.height);
     
     return xIsInside && yIsInside;
 }
 
 - (void) didSelectedComida:(NSString *)comidaImage {
+    
+    if (imagenComida){
+        [imagenComida removeFromSuperview];
+        imagenComida = nil;
+    }
+    
     UIImage* img = [UIImage imageNamed:comidaImage];
     imagenComida = [[UIImageView alloc] initWithImage:img];
     
@@ -91,7 +99,7 @@
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = screenRect.size.height;
     
-    [imagenComida setFrame:CGRectMake(screenWidth - 90, screenHeight - 150, 90, 90)];
+    [imagenComida setFrame:CGRectMake(screenWidth - 90, screenHeight - 150, 55, 55)];
     
     [self.view addSubview:imagenComida];
     
@@ -117,7 +125,7 @@
                                              nil];
     [imgMascota setAnimationImages:imagenesMascotaEjercitando];
     [imgMascota setAnimationDuration:0.6f];
-    [imgMascota setAnimationRepeatCount:5.0f];
+    [imgMascota setAnimationRepeatCount:0];
     [imgMascota startAnimating];
     
     [btnEjercitar setTitle:@"Parar" forState:UIControlStateNormal];
@@ -151,15 +159,28 @@
     
     [[[UIAlertView alloc] initWithTitle:@"Tu mascota esta extenuada!" message:@"Dale de comer para que recupere energía" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
     
+
+
     [self pararEjercicio];
     
-    [imgMascota setImage:[UIImage imageNamed:@"mascota_extenuda.png"]];
+    NSArray * imagenesMascotaExhausto  = [[NSArray alloc] initWithObjects:
+                                          [UIImage imageNamed:@"exhausto_1.png"],
+                                          [UIImage imageNamed:@"exhausto_2.png"],
+                                          [UIImage imageNamed:@"exhausto_3.png"],
+                                          nil];
+    [imgMascota setAnimationImages:imagenesMascotaExhausto];
+    [imgMascota setAnimationDuration:0.6f];
+    [imgMascota setAnimationRepeatCount:1.0f];
+    [imgMascota startAnimating];
+    [imgMascota performSelector:@selector(setImage:) withObject:[UIImage imageNamed:@"exhausto_4.png"] afterDelay:0.7f];
+
     
     [btnEjercitar setEnabled:NO];
 }
 
 - (void) mascotaTieneEnergiaOtraVez {
-    [imgMascota setImage:[UIImage imageNamed:@"mascota_normal.png"]];
+    
+    [imgMascota setImage:[UIImage imageNamed:@"ejercicio_1"]];
     
     [btnEjercitar setEnabled:YES];
 }

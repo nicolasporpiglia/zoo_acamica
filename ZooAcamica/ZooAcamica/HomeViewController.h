@@ -15,7 +15,7 @@
     IBOutlet UIImageView* imgMascota;
     IBOutlet UIButton* btnEjercitar;
     IBOutlet UIProgressView* progressEnergia;
-    
+    IBOutlet UIView * viewZonaComer;
     UIImageView* imagenComida;
     NSTimer* timerEjercicio;
 }

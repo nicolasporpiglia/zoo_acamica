@@ -24,7 +24,7 @@ static EstadoMascota *instance;
     self = [super init];
     
     if(self) {
-        self.energia = 100;
+        self.energia = 10;
         self.experiencia = 0;
         self.nivel = 0;
     }
@@ -46,7 +46,7 @@ static EstadoMascota *instance;
 }
 
 - (void) ejercitar {
-    self.energia--;
+    self.energia-= 10;
     
     if (self.energia < 0) {
         self.energia = 0;
