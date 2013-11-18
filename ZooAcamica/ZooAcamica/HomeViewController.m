@@ -65,10 +65,11 @@
                                                       [UIImage imageNamed:@"comiendo_1.png"],
                                                       [UIImage imageNamed:@"comiendo_2.png"],
                                                       [UIImage imageNamed:@"comiendo_3.png"],
+                                                      [UIImage imageNamed:@"comiendo_3.png"],
                                                       nil];
                              [imgMascota setAnimationImages:imagenesMascotaComiendo];
                              [imgMascota setAnimationDuration:1.0f];
-                             [imgMascota setAnimationRepeatCount:3.0f];
+                             [imgMascota setAnimationRepeatCount:1.0f];
                              [imgMascota startAnimating];
                          }
                      }];
@@ -90,7 +91,7 @@
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = screenRect.size.height;
     
-    [imagenComida setFrame:CGRectMake(screenWidth - 90, screenHeight - 90, 90, 90)];
+    [imagenComida setFrame:CGRectMake(screenWidth - 90, screenHeight - 150, 90, 90)];
     
     [self.view addSubview:imagenComida];
     
@@ -108,12 +109,15 @@
 
 - (void) iniciarEjercicio {
     NSArray * imagenesMascotaEjercitando  = [[NSArray alloc] initWithObjects:
-                                             [UIImage imageNamed:@"ejercitando_1.png"],
-                                             [UIImage imageNamed:@"ejercitando_2.png"],
-                                             [UIImage imageNamed:@"ejercitando_3.png"],
+                                             [UIImage imageNamed:@"ejercicio_1.png"],
+                                             [UIImage imageNamed:@"ejercicio_2.png"],
+                                             [UIImage imageNamed:@"ejercicio_3.png"],
+                                             [UIImage imageNamed:@"ejercicio_4.png"],
+                                             [UIImage imageNamed:@"ejercicio_5.png"],
                                              nil];
     [imgMascota setAnimationImages:imagenesMascotaEjercitando];
-    [imgMascota setAnimationDuration:1.0f];
+    [imgMascota setAnimationDuration:0.6f];
+    [imgMascota setAnimationRepeatCount:5.0f];
     [imgMascota startAnimating];
     
     [btnEjercitar setTitle:@"Parar" forState:UIControlStateNormal];
