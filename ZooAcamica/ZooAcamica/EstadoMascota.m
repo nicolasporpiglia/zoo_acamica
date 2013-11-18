@@ -24,7 +24,7 @@ static EstadoMascota *instance;
     self = [super init];
     
     if(self) {
-        self.energia = 10;
+        self.energia = 80;
         self.experiencia = 0;
         self.nivel = 0;
     }

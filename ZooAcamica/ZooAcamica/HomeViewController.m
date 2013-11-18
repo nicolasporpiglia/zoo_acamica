@@ -156,10 +156,6 @@
 }
 
 - (void) mascotaExtenuada {
-    
-    [[[UIAlertView alloc] initWithTitle:@"Tu mascota esta extenuada!" message:@"Dale de comer para que recupere energía" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
-    
-
 
     [self pararEjercicio];
     
