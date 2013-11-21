@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface StatusViewController : UIViewController {
+@interface StatusViewController : UIViewController <UITextFieldDelegate>{
     IBOutlet UIProgressView* progressEnergia;
+    IBOutlet UILabel *lblExperiencia, *lblNivel;
+    IBOutlet UITextField *txtNombre;
 }
 
 @end

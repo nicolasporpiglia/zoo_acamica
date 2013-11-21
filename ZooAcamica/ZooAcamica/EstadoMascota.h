@@ -19,5 +19,6 @@
 @property(atomic,assign) float energia;
 @property(atomic,assign) int experiencia;
 @property(atomic,assign) int nivel;
+@property(nonatomic,retain) NSString* nombre;
 
 @end

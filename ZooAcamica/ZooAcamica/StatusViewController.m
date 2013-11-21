@@ -19,9 +19,24 @@
     return @"Estado";
 }
 
-- (void) viewDidLoad {
-    [progressEnergia setProgress:[[EstadoMascota sharedInstance] energia]/100 animated:YES];
 
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [progressEnergia setProgress:[[EstadoMascota sharedInstance] energia]/100 animated:YES];
+    [lblExperiencia setText:[NSString stringWithFormat:@"Experiencia: %d", [[EstadoMascota sharedInstance] experiencia]]];
+    [lblNivel setText:[NSString stringWithFormat:@"Nivel: %d", [[EstadoMascota sharedInstance] nivel]]];
+    [txtNombre setText:[[EstadoMascota sharedInstance] nombre]];
+
+}
+
+
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    [[EstadoMascota sharedInstance] setNombre:textField.text];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
 }
 
 @end

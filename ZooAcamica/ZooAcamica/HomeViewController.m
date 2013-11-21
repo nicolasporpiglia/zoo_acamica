@@ -11,6 +11,18 @@
 
 @implementation HomeViewController
 
+
+-(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
+    
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    
+    if (self){
+        [[EstadoMascota sharedInstance] setNombre:@"Panchito"];
+    }
+    
+    return self;
+}
+
 - (void) viewWillAppear:(BOOL)animated {
     
     UIBarButtonItem *comidasButton = [[UIBarButtonItem alloc] initWithTitle:@"Comidas" style:UIBarButtonItemStylePlain target:self action:@selector(openComidas)];
@@ -23,6 +35,8 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mascotaExtenuada) name:NOTIFICACION_MASCOTA_SIN_ENERGIA object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mascotaTieneEnergiaOtraVez) name:NOTIFICACION_MASCOTA_CON_ENERGIA object:nil];
+    
+    self.title = [[EstadoMascota sharedInstance] nombre];
 }
 
 - (void) viewWillDisappear:(BOOL)animated {
@@ -30,10 +44,6 @@
     
     [[NSNotificationCenter defaultCenter] removeObserver:self name:NOTIFICACION_MASCOTA_CON_ENERGIA object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:NOTIFICACION_MASCOTA_SIN_ENERGIA object:nil];
-}
-
-- (NSString*) title {
-    return @"Panchito";
 }
 
 - (void) openComidas {
