@@ -138,7 +138,7 @@
     [imgMascota setAnimationRepeatCount:0];
     [imgMascota startAnimating];
     
-    [btnEjercitar setTitle:@"Parar" forState:UIControlStateNormal];
+    [btnEjercitar setTitle:@"PARAR" forState:UIControlStateNormal];
     
     timerEjercicio = [NSTimer scheduledTimerWithTimeInterval:2.0f target:self selector:@selector(haciendoEjercicio) userInfo:nil repeats:YES];
     
@@ -151,7 +151,7 @@
     [timerEjercicio invalidate];
     timerEjercicio = nil;
     
-    [btnEjercitar setTitle:@"Ejercitar" forState:UIControlStateNormal];
+    [btnEjercitar setTitle:@"EJERCITAR" forState:UIControlStateNormal];
     
     self.estaEjercitando = NO;
 }
